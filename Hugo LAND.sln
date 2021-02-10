@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hugo LAND.Console", "Hugo LAND\Hugo LAND.Console.csproj", "{717E0A91-7348-4079-8A44-A31E6BF712CF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B9A1C87-90F3-43AF-953F-0C74E408955C} = {4B9A1C87-90F3-43AF-953F-0C74E408955C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hugo LAND.Core", "Hugo LAND.Core\Hugo LAND.Core.csproj", "{4B9A1C87-90F3-43AF-953F-0C74E408955C}"
 EndProject
