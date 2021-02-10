@@ -1,0 +1,19 @@
+"Hugo LAND"/Debug/
+"Hugo LAND"/Release/
+"Hugo LAND"/x64/
+*.vcxproj.user
+*.exe
+*.ilk
+*.suo
+*.pdb
+*.sdf
+*.exe
+*.obj
+*.tlog
+*.log
+*.idb
+*.db
+*.lastbuildstate
+.vs/
+"Hugo LAND"/.vs/
+*.bin

@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.csproj",
-      "projectName": "Hugo LAND",
-      "projectPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.csproj",
+      "projectUniqueName": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
+      "projectName": "Hugo LAND.Console",
+      "projectPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
       "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
       "outputPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\obj\\",
       "projectStyle": "PackageReference",
