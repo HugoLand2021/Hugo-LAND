@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CompteJoueurs.cs" />
     <Compile Include="Model\MondeCRUD.cs" />
     <Compile Include="Classe.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
