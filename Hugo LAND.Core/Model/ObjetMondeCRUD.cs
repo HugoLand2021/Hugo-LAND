@@ -18,10 +18,12 @@ namespace Hugo_LAND.Core.Model
         /// <param name="newDescription"></param>
         /// <param name="newTypeObjet"></param>
         /// <param name="monde"></param>
-        public static void CreeObjetMonde(int newX, int newY, string newDescription, int newTypeObjet, Monde monde)
+        public static void CreeObjetMonde(int newX, int newY, string newDescription, int newTypeObjet, int idMonde)
         {
             using (var context = new HugoLANDContext())
             {
+                var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+
                 var newObjetMonde = new ObjetMonde
                 {
                     x = newX,
@@ -43,11 +45,11 @@ namespace Hugo_LAND.Core.Model
         /// </summary>
         /// <param name="id"></param>
         /// <param name="monde"></param>
-        public static void SupprimeObjetMonde(int id, Monde monde) // Je crois pas avoit besoin du monde, normalement l'id devrait être unique peu importe le monde
+        public static void SupprimeObjetMonde(int id) 
         {
             using (var context = new HugoLANDContext())
             {
-                var objetMonde = context.ObjetMondes.Where(o => o.Id == id && o.Monde == monde).First();
+                var objetMonde = context.ObjetMondes.Where(o => o.Id == id).First();
 
                 context.ObjetMondes.Remove(objetMonde); //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
 
@@ -64,11 +66,13 @@ namespace Hugo_LAND.Core.Model
         /// <param name="id"></param>
         /// <param name="monde"></param>
         /// <param name="newDescription"></param>
-        public static void ChangeDescriptionObjetMonde(int id, Monde monde, string newDescription)
+        public static void ChangeDescriptionObjetMonde(int id, /*int idMonde, */string newDescription)
         {
             using (var context = new HugoLANDContext())
             {
-                var objetMonde = context.ObjetMondes.Where(o => o.Id == id && o.Monde == monde).First();
+                //var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+
+                var objetMonde = context.ObjetMondes.Where(o => o.Id == id/* && o.Monde == monde*/).First();
 
                 objetMonde.Description = newDescription; //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
 

@@ -28,9 +28,9 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id);
+                var result = context.Mondes.Where(c => c.Id == id).First();
 
-                context.Mondes.Remove((Monde)result);
+                context.Mondes.Remove(result);
 
 
                 context.SaveChanges();
@@ -40,10 +40,10 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id);
+                var result = context.Mondes.Where(c => c.Id == id).First();
 
-                context.Mondes.Find(result).LimiteX = limX;
-                context.Mondes.Find(result).LimiteY = limY;
+                result.LimiteX = limX;
+                result.LimiteY = limY;
 
                 context.SaveChanges();
             }
@@ -54,9 +54,9 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id);
+                var result = context.Mondes.Where(c => c.Id == id).First();
 
-                context.Mondes.Find(result).Description = description;
+                result.Description = description;
                 context.SaveChanges();
             }
 
