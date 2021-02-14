@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hugo_LAND.Core.Model
 {
-    public class CompteJoueurs
+    public class CompteJoueurs //
     {
         public static void CreerJoueur(string nomJoueur, string courriel, string prenom, string nom, int typeUtilisateur, string mdp, Guid salt, Hero hero)
         {
