@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CompteJoueurs.cs" />
+    <Compile Include="Model\EffetItemCRUD.cs" />
     <Compile Include="Model\MondeCRUD.cs" />
     <Compile Include="Classe.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
@@ -85,6 +86,7 @@
     <Compile Include="Item.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ObjetMondeCRUD.cs" />
     <Compile Include="Monde.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
     </Compile>
