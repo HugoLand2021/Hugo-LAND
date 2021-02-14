@@ -10,7 +10,7 @@ namespace Hugo_LAND.Core.Model
     {
 
         //Méthode pour les Mondes
-        public static void CreerMonde(string description, int limX, int limY, Classe classe, Hero hero, Item item, Monstre monstre, ObjetMonde objetMonde)
+        public static void CreerMonde(string description, int limX, int limY, ICollection<Classe> classe, ICollection<Hero> hero, ICollection<Item> item, ICollection<Monstre> monstre, ICollection<ObjetMonde> objetMonde)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
@@ -19,10 +19,11 @@ namespace Hugo_LAND.Core.Model
                     Description = description,
                     LimiteX = limX,
                     LimiteY = limY,
-                    Classes = (ICollection<Classe>)classe,
-                    Items = (ICollection<Item>)item,
-                    Monstres = (ICollection<Monstre>)monstre,
-                    ObjetMondes = (ICollection<ObjetMonde>)objetMonde
+                    Classes = classe,
+                    Heros = hero,
+                    Items = item,
+                    Monstres = monstre,
+                    ObjetMondes = objetMonde
 
                 };
                 context.Mondes.Add(nouveauMonde);
@@ -35,7 +36,7 @@ namespace Hugo_LAND.Core.Model
             {
                 var result = context.Mondes.Where(c => c.Id == id);
 
-                context.Mondes.RemoveRange(result);
+                context.Mondes.Remove((Monde)result);
 
 
                 context.SaveChanges();
