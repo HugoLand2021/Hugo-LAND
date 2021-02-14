@@ -1,0 +1,12 @@
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\Hugo LAND.Core.dll.config
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\Hugo LAND.Core.dll
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\Hugo LAND.Core.pdb
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\EntityFramework.dll
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\EntityFramework.xml
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.csprojAssemblyReference.cache
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.csproj.CoreCompileInputs.cache
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.csproj.CopyComplete
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.dll
+C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.pdb

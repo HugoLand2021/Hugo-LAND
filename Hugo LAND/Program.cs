@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hugo_LAND.Core.Model;
+using System;
 
 namespace Hugo_LAND
 {
@@ -6,7 +7,8 @@ namespace Hugo_LAND
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            MondeCRUD.CreerMonde("vertbleu",200,200);
         }
     }
 }

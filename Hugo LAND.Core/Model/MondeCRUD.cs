@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hugo_LAND.Core.Model
 {
-    public class MondeCRUD
+    public static class MondeCRUD
     {
 
         //Méthode pour les Mondes
-        public static void CreerMonde(string description, int limX, int limY, ICollection<Classe> classe, ICollection<Hero> hero, ICollection<Item> item, ICollection<Monstre> monstre, ICollection<ObjetMonde> objetMonde)
+        public static void CreerMonde(string description, int limX, int limY)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
@@ -18,13 +18,7 @@ namespace Hugo_LAND.Core.Model
                 {
                     Description = description,
                     LimiteX = limX,
-                    LimiteY = limY,
-                    Classes = classe,
-                    Heros = hero,
-                    Items = item,
-                    Monstres = monstre,
-                    ObjetMondes = objetMonde
-
+                    LimiteY = limY
                 };
                 context.Mondes.Add(nouveauMonde);
                 context.SaveChanges();
@@ -67,7 +61,7 @@ namespace Hugo_LAND.Core.Model
             }
 
         }
-        public List<Monde> ListeMonde()
+        public static List<Monde> ListeMonde()
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
