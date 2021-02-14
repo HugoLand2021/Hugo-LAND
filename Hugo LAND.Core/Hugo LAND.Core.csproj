@@ -50,7 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Model\ItemCRUD.cs" />
+=======
+    <Compile Include="Model\ClassesCRUD.cs" />
+    <Compile Include="Model\CompteJoueurs.cs" />
+    <Compile Include="Model\EffetItemCRUD.cs" />
+    <Compile Include="Model\HeroCRUD.cs" />
+>>>>>>> dev
     <Compile Include="Model\MondeCRUD.cs" />
     <Compile Include="Classe.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
@@ -85,6 +92,7 @@
     <Compile Include="Item.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\MonstreCRUD.cs" />
     <Compile Include="Model\ObjetMondeCRUD.cs" />
     <Compile Include="Monde.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>

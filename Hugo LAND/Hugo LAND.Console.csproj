@@ -6,4 +6,12 @@
     <RootNamespace>Hugo_LAND</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hugo LAND.Core\Hugo LAND.Core.csproj" />
+  </ItemGroup>
+
 </Project>

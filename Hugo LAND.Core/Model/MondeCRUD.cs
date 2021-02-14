@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hugo_LAND.Core.Model
 {
-    public class MondeCRUD
+    public static class MondeCRUD
     {
 
         //Méthode pour les Mondes
-        public static void CreerMonde(string description, int limX, int limY, Classe classe, Hero hero, Item item, Monstre monstre, ObjetMonde objetMonde)
+        public static void CreerMonde(string description, int limX, int limY)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
@@ -18,12 +18,7 @@ namespace Hugo_LAND.Core.Model
                 {
                     Description = description,
                     LimiteX = limX,
-                    LimiteY = limY,
-                    Classes = (ICollection<Classe>)classe,
-                    Items = (ICollection<Item>)item,
-                    Monstres = (ICollection<Monstre>)monstre,
-                    ObjetMondes = (ICollection<ObjetMonde>)objetMonde
-
+                    LimiteY = limY
                 };
                 context.Mondes.Add(nouveauMonde);
                 context.SaveChanges();
@@ -33,9 +28,9 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id);
+                var result = context.Mondes.Where(c => c.Id == id).First();
 
-                context.Mondes.RemoveRange(result);
+                context.Mondes.Remove(result);
 
 
                 context.SaveChanges();
@@ -45,10 +40,10 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id);
+                var result = context.Mondes.Where(c => c.Id == id).First();
 
-                context.Mondes.Find(result).LimiteX = limX;
-                context.Mondes.Find(result).LimiteY = limY;
+                result.LimiteX = limX;
+                result.LimiteY = limY;
 
                 context.SaveChanges();
             }
@@ -59,14 +54,14 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id);
+                var result = context.Mondes.Where(c => c.Id == id).First();
 
-                context.Mondes.Find(result).Description = description;
+                result.Description = description;
                 context.SaveChanges();
             }
 
         }
-        public List<Monde> ListeMonde()
+        public static List<Monde> ListeMonde()
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
