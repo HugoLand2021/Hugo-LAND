@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hugo_LAND.Core.Model
 {
-    public class ObjetMondeCRUD
+    public static class ObjetMondeCRUD
     {
         /// <summary>
         /// Auteur : Arnaud Labrecque
@@ -43,13 +43,13 @@ namespace Hugo_LAND.Core.Model
         /// </summary>
         /// <param name="id"></param>
         /// <param name="monde"></param>
-        public static void SupprimeObjetMonde(int id, Monde monde)
+        public static void SupprimeObjetMonde(int id, Monde monde) // Je crois pas avoit besoin du monde, normalement l'id devrait être unique peu importe le monde
         {
             using (var context = new HugoLANDContext())
             {
-                var objetMonde = context.ObjetMondes.Where(o => o.Id == id && o.Monde == monde);
+                var objetMonde = context.ObjetMondes.Where(o => o.Id == id && o.Monde == monde).First();
 
-                context.ObjetMondes.Remove((ObjetMonde)objetMonde); //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
+                context.ObjetMondes.Remove(objetMonde); //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
 
                 context.SaveChanges();
             }
@@ -68,9 +68,9 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var objetMonde = context.ObjetMondes.Where(o => o.Id == id && o.Monde == monde);
+                var objetMonde = context.ObjetMondes.Where(o => o.Id == id && o.Monde == monde).First();
 
-                context.ObjetMondes.Find(objetMonde).Description = newDescription; //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
+                objetMonde.Description = newDescription; //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
 
                 context.SaveChanges();
             }
