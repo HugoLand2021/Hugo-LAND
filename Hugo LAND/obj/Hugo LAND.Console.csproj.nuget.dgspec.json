@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arnau\\Documents\\GitHub\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {}
+    "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arnau\\Documents\\GitHub\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {
+    "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arnau\\Documents\\GitHub\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
+        "projectUniqueName": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
         "projectName": "Hugo LAND.Console",
-        "projectPath": "C:\\Users\\arnau\\Documents\\GitHub\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
-        "packagesPath": "C:\\Users\\arnau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arnau\\Documents\\GitHub\\Hugo-LAND\\Hugo LAND\\obj\\",
+        "projectPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
+        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
+        "outputPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\arnau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
