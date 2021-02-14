@@ -6,27 +6,23 @@ using System.Threading.Tasks;
 
 namespace Hugo_LAND.Core.Model
 {
-
-    //        public int Id { get; set; }
-    //public string Nom { get; set; }
-    //public int Niveau { get; set; }
-    //public int x { get; set; }
-    //public int y { get; set; }
-    //public int StatPV { get; set; }
-    //public float StatDmgMin { get; set; }
-    //public float StatDmgMax { get; set; }
-    //public Nullable<int> ImageId { get; set; }
-
-    //public virtual Monde Monde { get; set; }
     public class MonstreCRUD
     {
-        public static void CreerMonstre()
+        public static void CreerMonstre(string nom, int niveau, int x, int y, int statPv, float statDmgMin, float statDmgMax, Nullable<int> imageId, Monde monde)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                context.Monstres.Add( new Monstre()
+                context.Monstres.Add(new Monstre()
                 {
-
+                    Nom = nom,
+                    Niveau = niveau,
+                    x = x,
+                    y = y,
+                    StatPV = statPv,
+                    StatDmgMin = statDmgMin,
+                    StatDmgMax = statDmgMax,
+                    ImageId= imageId,
+                    Monde = monde
                 });
                 context.SaveChanges();
             }

@@ -84,6 +84,7 @@
     <Compile Include="Item.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\MonstreCRUD.cs" />
     <Compile Include="Monde.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>
     </Compile>
