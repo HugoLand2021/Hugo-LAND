@@ -54,6 +54,7 @@
     <Compile Include="Model\CompteJoueursCRUD.cs" />
     <Compile Include="Model\EffetItemCRUD.cs" />
     <Compile Include="Model\HeroCRUD.cs" />
+    <Compile Include="Model\ItemCRUD.cs" />
     <Compile Include="Model\MondeCRUD.cs" />
     <Compile Include="Classe.cs">
       <DependentUpon>HugoLANDModel.tt</DependentUpon>

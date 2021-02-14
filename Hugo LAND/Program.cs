@@ -51,8 +51,49 @@ namespace Hugo_LAND
 
             */
 
+            /* Range de test pour les Items
+             
+            ItemCRUD.CreerItem("Potion de Vigueur", "Augmente le debit d'eau", 23, 10, null, 3);
+
+            */
+
+            /* Range de test pour les ItemsEffets
+             
+            */
 
 
+            /* Range de test pour les Heros
+                         HeroCRUD.CreeHero(1,0,1,1,1,1,1,50,"Peteux",false,2,5,1);
+                        HeroCRUD.ModifHero(2,4,5000,10,13,123,20,10,500,"senteux ultime",false,2,5,4);
+                    HeroCRUD.SupprimeHero(2);
+                        var poop = HeroCRUD.RetourneHerosCompte(5);
+            foreach (Hero pooper in poop)
+            {
+                Console.WriteLine($"ID : {pooper.Id}");
+                Console.WriteLine($"Nom hero : {pooper.NomHero}");
+            };
+            
+                        HeroCRUD.DeplaceHero(1,2,2);
+
+
+            */
+
+
+            /* Range de test pour les Classes
+                ClassesCRUD.CreerClasse("Chevalier", "force brute est son troisieme nom", 5, 2, 0, 8, 3);
+                ClassesCRUD.CreerClasse("Magicien Démoniaque", "force démoniaque est son quatrieme nom", 2, 5, 8, 1, 3);
+                ClassesCRUD.Modif("trou de pete", "sens fort", 23, 53, 82, 14, 3);
+                ClassesCRUD.SupprimeClasse(4);
+                        var poop = ClassesCRUD.RetournerClassesMonde(3);          
+            Console.WriteLine(ClassesCRUD.RetourneClasseHero(1).NomClasse); 
+            foreach (Classe pooper in poop)
+            {
+                Console.WriteLine($"ID : {pooper.Id}");
+                Console.WriteLine($"Description : {pooper.Description}");
+            };
+            */
+
+            EffetItemCRUD.SupprimeEffetItem(1);
         }
     }
 }

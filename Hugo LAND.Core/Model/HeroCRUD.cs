@@ -9,11 +9,15 @@ namespace Hugo_LAND.Core.Model
     public static class HeroCRUD
     {
         public static void CreeHero(int newNiveau, long newExperience, int newX, int newY, int newStatStr, int newStatDex,
-            int newStatInt, int newStatVitalite, string newNomHero, bool newConnection, Classe newClasse, CompteJoueur compteJoueur,
-              Monde monde)
+            int newStatInt, int newStatVitalite, string newNomHero, bool newConnection, int idClasse, int idCompteJoueur,
+              int idMonde)
         {
             using (var context = new HugoLANDContext())
             {
+                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
+                var newClasse = context.Classes.Where(c => c.Id == idClasse).First();
+                var compteJoueur = context.CompteJoueurs.Where(co => co.Id == idCompteJoueur).First();
+
                 var newHero = new Hero // Dans le constructeur d'hero il fait deja un call de this.inventaire etc. Je prend le monde en paramêtre aussi ?
                 {
                     Niveau = newNiveau,
@@ -40,21 +44,23 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var hero = context.Heros.Where(o => o.Id == id);
+                var hero = context.Heros.Where(o => o.Id == id).First();
 
-                context.ObjetMondes.Remove((ObjetMonde)hero); //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
+                context.Heros.Remove(hero);
 
                 context.SaveChanges();
             }
         }
 
-        public static void ChangeHero(int id, int newNiveau, long newExperience, int newX, int newY, int newStatStr, int newStatDex,
-            int newStatInt, int newStatVitalite, string newNomHero, bool newConnection, Classe newClasse, CompteJoueur compteJoueur,
-             ICollection<InventaireHero> newInventaireHeroes, Monde monde, ICollection<Item> newItems)
+        public static void ModifHero(int id, int newNiveau, long newExperience, int newX, int newY, int newStatStr, int newStatDex,
+            int newStatInt, int newStatVitalite, string newNomHero, bool newConnection, int idClasse, int idCompteJoueur, int idMonde)
         {
             using (var context = new HugoLANDContext())
             {
                 var hero = context.Heros.Where(o => o.Id == id).First();
+                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
+                var newClasse = context.Classes.Where(c => c.Id == idClasse).First();
+                var compteJoueur = context.CompteJoueurs.Where(co => co.Id == idCompteJoueur).First();
 
                 hero.Niveau = newNiveau;
                 hero.Experience = newExperience;
@@ -68,37 +74,40 @@ namespace Hugo_LAND.Core.Model
                 hero.EstConnecte = newConnection;
                 hero.Classe = newClasse;
                 hero.CompteJoueur = compteJoueur;
-                hero.InventaireHeroes = newInventaireHeroes;
-                hero.Items = newItems;
                 hero.Monde = monde;
+
                 // Voir avec les boys si on modifie tous ?????!???!??!?
                 context.SaveChanges();
             }
         }
 
-        public static ICollection<ObjetMonde> ObjetsMondesVues(Hero hero)
+        //public static ICollection<ObjetMonde> ObjetsMondesVues(Hero hero)
+        //{
+        //    using (var context = new HugoLANDContext())
+        //    {
+        //        var heroView = context.Mondes.Where(o => o.Id == hero.Monde.Id);
+
+        //        return heroView.ObjetMondes;
+        //    }
+        //} // Revoir si je dois faire du for dans du for pour sortir chaque coordonnés
+
+        public static ICollection<Hero> RetourneHerosCompte(int idCompteJoueur)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
-                var heroView = context.Mondes.Where(o => o.Id == hero.Monde.Id);
-
-                return context.Mondes.Find(heroView).ObjetMondes;
+                var result = context.CompteJoueurs.Where(c => c.Id == idCompteJoueur).First().Heros;
+                return result;
             }
-        } // Revoir si je dois faire du for dans du for pour sortir chaque coordonnés
-
-        public static ICollection<Hero> RetourneHerosCompte(CompteJoueur compteJoueur)
-        {
-            return compteJoueur.Heros;
         }
 
-        public static void DeplaceHero(Hero hero, int newX, int newY)
+        public static void DeplaceHero(int idHero, int newX, int newY)
         {
             using (var context = new HugoLANDContext())
             {
-                var heroToMove = hero;
+                var hero = context.Heros.Where(h => h.Id == idHero).First();
 
-                heroToMove.x = newX;
-                heroToMove.y = newY;
+                hero.x = newX;
+                hero.y = newY;
                 context.SaveChanges();
             }
         }

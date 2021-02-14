@@ -22,7 +22,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
 
                 var newObjetMonde = new ObjetMonde
                 {
