@@ -8,10 +8,12 @@ namespace Hugo_LAND.Core.Model
 {
     public class MonstreCRUD
     {
-        public static void CreerMonstre(string nom, int niveau, int x, int y, int statPv, float statDmgMin, float statDmgMax, Nullable<int> imageId, Monde monde)
+        public static void CreerMonstre(string nom, int niveau, int x, int y, int statPv, float statDmgMin, float statDmgMax, Nullable<int> imageId, int idMonde)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
+                var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+
                 context.Monstres.Add(new Monstre()
                 {
                     Nom = nom,
@@ -35,11 +37,13 @@ namespace Hugo_LAND.Core.Model
                 context.SaveChanges();
             }
         }
-        public static void ModifierMonstre(int ID, int ImageId, Monde monde, int niveau, string nom,  float statDmgMax, float statDmgMin, int statPv, int x, int y)
+        public static void ModifierMonstre(int ID, string nom, int niveau, int x, int y, int statPv,  float statDmgMin, float statDmgMax, Nullable<int> ImageId, int idMonde)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
                 var monstre = context.Monstres.Where(m => m.Id == ID).Single();
+                var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+
                 monstre.ImageId = ImageId;
                 monstre.Monde = monde;
                 monstre.Niveau = niveau;
