@@ -14,11 +14,11 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Find(idMonde);
-                var newClasse = context.Classes.Find(idClasse);
-                var compteJoueur = context.CompteJoueurs.Find(idCompteJoueur);
+                Monde monde = context.Mondes.Find(idMonde);
+                Classe classe = context.Classes.Find(idClasse);
+                CompteJoueur compteJoueur = context.CompteJoueurs.Find(idCompteJoueur);
 
-                var newHero = new Hero // Dans le constructeur d'hero il fait deja un call de this.inventaire etc. Je prend le monde en paramêtre aussi ?
+                Hero newHero = new Hero
                 {
                     Niveau = newNiveau,
                     Experience = newExperience,
@@ -30,11 +30,10 @@ namespace Hugo_LAND.Core.Model
                     StatVitalite = newStatVitalite,
                     NomHero = newNomHero,
                     EstConnecte = newConnection,
-                    Classe = newClasse,
+                    Classe = classe,
                     CompteJoueur = compteJoueur,
                     Monde = monde
                 };
-
                 context.Heros.Add(newHero);
                 context.SaveChanges();
             }
@@ -44,21 +43,17 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var hero = context.Heros.Find(id);
-
-                context.Heros.Remove(hero);
-
+                context.Heros.Remove(context.Heros.Find(id));
                 context.SaveChanges();
             }
         }
 
-        public static void ModifHero(int id, int newNiveau, long newExperience, int newX, int newY, int newStatStr, int newStatDex,
-            int newStatInt, int newStatVitalite, string newNomHero, bool newConnection, int idClasse, int idCompteJoueur, int idMonde)
+        public static void ModifHero(int id, int newNiveau, long newExperience, int newStatStr, int newStatDex,
+            int newStatInt, int newStatVitalite, string newNomHero)
         {
             using (var context = new HugoLANDContext())
             {
                 Hero hero = context.Heros.Find(id);
-
                 hero.Niveau = newNiveau;
                 hero.Experience = newExperience;
                 hero.StatStr = newStatStr;
@@ -66,56 +61,31 @@ namespace Hugo_LAND.Core.Model
                 hero.StatInt = newStatInt;
                 hero.StatVitalite = newStatVitalite;
                 hero.NomHero = newNomHero;
-
                 context.SaveChanges();
             }
         }
 
-        public static void ModifierHero(int id, string prenom, string nom)
+        public static ICollection<ObjetMonde> RetourneObjetMondes(int mondeId, int heroX, int heroY, int rayon)
         {
-            using (var context = new HugoLANDContext())
+            if (rayon > 200 || rayon <= 0)
             {
-
-                context.Heros.Attach(hero);
-                context.Entry<Hero>(hero).State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
-            }
-        }
-
-        public static ICollection<ObjetMonde> GetObjetMondes(int heroId, int mondeId, int heroX, int heroY, int radius)
-        {
-            if (radius > 200)
-            {
-                throw new RuntimeException();
+                throw new Exception("DimensionRayonPasBonne");
             }
 
             using (var context = new HugoLANDContext())
             {
                 return context.Mondes.Find(mondeId)
-                    .ObjetMondes.Where(obj => Math.Abs(obj.x - heroX) < radius &&
-                                              Math.Abs(obj.y - heroY) < radius)
+                    .ObjetMondes.Where(obj => Math.Abs(obj.x - heroX) < rayon &&
+                                              Math.Abs(obj.y - heroY) < rayon)
                     .ToList();
             }
         }
-
-
-
-        //public static ICollection<ObjetMonde> ObjetsMondesVues(Hero hero)
-        //{
-        //    using (var context = new HugoLANDContext())
-        //    {
-        //        var heroView = context.Mondes.Where(o => o.Id == her.Monde.Id);
-
-        //        return heroView.ObjetMondes;
-        //    }
-        //} // Revoir si je dois faire du for dans du for pour sortir chaque coordonnés
 
         public static ICollection<Hero> RetourneHerosCompte(int idCompteJoueur)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.CompteJoueurs.Where(c => c.Id == idCompteJoueur).First().Heros;
-                return result;
+                return context.CompteJoueurs.Find(idCompteJoueur).Heros;
             }
         }
 
@@ -123,8 +93,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var hero = context.Heros.Where(h => h.Id == idHero).First();
-
+                Hero hero = context.Heros.Find(idHero);
                 hero.x = newX;
                 hero.y = newY;
                 context.SaveChanges();
