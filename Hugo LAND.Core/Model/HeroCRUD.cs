@@ -57,35 +57,54 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var hero = context.Heros.Where(o => o.Id == id).First();
-                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
-                var newClasse = context.Classes.Where(c => c.Id == idClasse).First();
-                var compteJoueur = context.CompteJoueurs.Where(co => co.Id == idCompteJoueur).First();
+                Hero hero = context.Heros.Find(o => o.Id == id).First();
 
                 hero.Niveau = newNiveau;
                 hero.Experience = newExperience;
-                hero.x = newX;
-                hero.y = newY;
                 hero.StatStr = newStatStr;
                 hero.StatDex = newStatDex;
                 hero.StatInt = newStatInt;
                 hero.StatVitalite = newStatVitalite;
                 hero.NomHero = newNomHero;
-                hero.EstConnecte = newConnection;
-                hero.Classe = newClasse;
-                hero.CompteJoueur = compteJoueur;
-                hero.Monde = monde;
 
-                // Voir avec les boys si on modifie tous ?????!???!??!?
                 context.SaveChanges();
             }
         }
+
+        public static void ModifierHero(int id, string prenom, string nom)
+        {
+            using (var context = new HugoLANDContext())
+            {
+
+                context.Heros.Attach(hero);
+                context.Entry<Hero>(hero).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
+        public static ICollection<ObjetMonde> GetObjetMondes(int heroId, int mondeId, int heroX, int heroY, int radius)
+        {
+            if (radius > 200)
+            {
+                throw new RuntimeException();
+            }
+
+            using (var context = new HugoLANDContext())
+            {
+                return context.Mondes.Find(mondeId)
+                    .ObjetMondes.Where(obj => Math.Abs(obj.x - heroX) < radius &&
+                                              Math.Abs(obj.y - heroY) < radius)
+                    .ToList();
+            }
+        }
+
+
 
         //public static ICollection<ObjetMonde> ObjetsMondesVues(Hero hero)
         //{
         //    using (var context = new HugoLANDContext())
         //    {
-        //        var heroView = context.Mondes.Where(o => o.Id == hero.Monde.Id);
+        //        var heroView = context.Mondes.Where(o => o.Id == her.Monde.Id);
 
         //        return heroView.ObjetMondes;
         //    }

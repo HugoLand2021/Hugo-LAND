@@ -40,17 +40,13 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.CompteJoueurs.Where(c => c.Id == id).Single();
-                
-
+                CompteJoueur result = context.CompteJoueurs.Find(id);
                 result.NomJoueur = nomJoueur;
                 result.Courriel = courriel;
                 result.Prenom = prenom;
                 result.Nom = nom;
                 result.TypeUtilisateur = typeUtilisateur;
-                result.MotDePasseHash = Encoding.ASCII.GetBytes(mdp); // WTF do we do ?
-                
-
+                result.MotDePasseHash = Encoding.ASCII.GetBytes(mdp); // Procédure stocké pour gérer le changement de mot de passe.
                 context.SaveChanges();
             }
         }

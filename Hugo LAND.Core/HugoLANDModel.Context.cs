@@ -78,6 +78,5 @@ namespace Hugo_LAND.Core
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CreerCompteJoueur", pNomUtilisateurParameter, pCourrielParameter, pPrenomParameter, pNomParameter, pTypeUtilisateurParameter, pMotDePasseParameter, message);
         }
-
     }
 }
