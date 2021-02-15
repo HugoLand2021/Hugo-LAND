@@ -28,7 +28,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id).First();
+                var result = context.Mondes.Find(id);
 
                 context.Mondes.Remove(result);
 
@@ -40,7 +40,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id).First();
+                var result = context.Mondes.Find(id);
 
                 result.LimiteX = limX;
                 result.LimiteY = limY;
@@ -54,7 +54,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == id).First();
+                var result = context.Mondes.Find(id);
 
                 result.Description = description;
                 context.SaveChanges();

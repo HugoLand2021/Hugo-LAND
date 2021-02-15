@@ -12,7 +12,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var item = context.Items.Where(m => m.Id == idItem).First();
+                var item = context.Items.Find(idItem);
 
                 var newEffetItem = new EffetItem
                 {
@@ -31,7 +31,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var effetItems = context.EffetItems.Where(i => i.Id == id).First();
+                var effetItems = context.EffetItems.Find(id);
 
                 context.EffetItems.Remove(effetItems);
                 context.SaveChanges();
@@ -44,7 +44,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var effetItems = context.EffetItems.Where(e => e.Id == id).First();
+                var effetItems = context.EffetItems.Find(id);
 
                 effetItems.ValeurEffet = changedValeurEffet;
                 effetItems.TypeEffet = changedTypeEffet;

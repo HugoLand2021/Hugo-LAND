@@ -12,7 +12,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+                var monde = context.Mondes.Find(idMonde);
 
                 context.Monstres.Add(new Monstre()
                 {
@@ -33,7 +33,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                context.Monstres.Remove(context.Monstres.Where(m => m.Id.Equals(ID)).Single());
+                context.Monstres.Remove(context.Monstres.Find(ID));
                 context.SaveChanges();
             }
         }
@@ -41,8 +41,8 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monstre = context.Monstres.Where(m => m.Id == ID).Single();
-                var monde = context.Mondes.Where(o => o.Id == idMonde).First();
+                var monstre = context.Monstres.Find(ID);
+                var monde = context.Mondes.Find(idMonde);
 
                 monstre.ImageId = ImageId;
                 monstre.Monde = monde;

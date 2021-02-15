@@ -12,7 +12,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
+                var monde = context.Mondes.Find(idMonde);
 
                 var nouvelleClasse = new Classe()
                 {
@@ -34,7 +34,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Classes.Where(c => c.Id == id).First();
+                var result = context.Classes.Find(id);
 
                 context.Classes.Remove(result);
 
@@ -46,8 +46,8 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Classes.Where(c => c.Id == id).First();
-                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
+                var result = context.Classes.Find(id);
+                var monde = context.Mondes.Find(idMonde);
 
                 result.NomClasse = nom;
                 result.Description = description;
@@ -65,7 +65,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Where(c => c.Id == idMonde).First().Classes;
+                var result = context.Mondes.Find(idMonde).Classes;
                 return result;
             }
         }
@@ -73,7 +73,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Heros.Where(c => c.Id == idHero).First().Classe;
+                var result = context.Heros.Find(idHero).Classe;
 
                 return result;
             }

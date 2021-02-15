@@ -14,7 +14,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Where(m => m.Id == mondeId).First();// On passe un ID, On recherche le hero basé sur l'Id, on pogne le hero et c'est lui qu'on passe
+                var monde = context.Mondes.Find(mondeId);// On passe un ID, On recherche le hero basé sur l'Id, on pogne le hero et c'est lui qu'on passe
 
                 context.Items.Add(new Item()
                 {
@@ -37,8 +37,8 @@ namespace Hugo_LAND.Core.Model
 
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                Hero hero = context.Heros.Where(h => h.Id == idHero).FirstOrDefault();
-                Item item = context.Items.Where(m => m.Id == id).FirstOrDefault();
+                Hero hero = context.Heros.Find(idHero);
+                Item item = context.Items.Find(id);
                 item.x = null;
                 item.y = null;
                 item.Hero = hero;

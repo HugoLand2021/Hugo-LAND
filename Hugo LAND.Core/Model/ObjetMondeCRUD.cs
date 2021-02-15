@@ -49,7 +49,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var objetMonde = context.ObjetMondes.Where(o => o.Id == id).First();
+                var objetMonde = context.ObjetMondes.Find(id);
 
                 context.ObjetMondes.Remove(objetMonde); //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
 
@@ -72,7 +72,7 @@ namespace Hugo_LAND.Core.Model
             {
                 //var monde = context.Mondes.Where(o => o.Id == idMonde).First();
 
-                var objetMonde = context.ObjetMondes.Where(o => o.Id == id/* && o.Monde == monde*/).First();
+                var objetMonde = context.ObjetMondes.Find(id);
 
                 objetMonde.Description = newDescription; //Essayer avec le cast explicit, si fonctionne pas, pisser sur Falco, montrer qui est le male dominant.
 

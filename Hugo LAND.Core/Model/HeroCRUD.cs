@@ -14,9 +14,9 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Where(m => m.Id == idMonde).First();
-                var newClasse = context.Classes.Where(c => c.Id == idClasse).First();
-                var compteJoueur = context.CompteJoueurs.Where(co => co.Id == idCompteJoueur).First();
+                var monde = context.Mondes.Find(idMonde);
+                var newClasse = context.Classes.Find(idClasse);
+                var compteJoueur = context.CompteJoueurs.Find(idCompteJoueur);
 
                 var newHero = new Hero // Dans le constructeur d'hero il fait deja un call de this.inventaire etc. Je prend le monde en paramêtre aussi ?
                 {
@@ -44,7 +44,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                var hero = context.Heros.Where(o => o.Id == id).First();
+                var hero = context.Heros.Find(id);
 
                 context.Heros.Remove(hero);
 
@@ -57,7 +57,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (var context = new HugoLANDContext())
             {
-                Hero hero = context.Heros.Find(o => o.Id == id).First();
+                Hero hero = context.Heros.Find(id);
 
                 hero.Niveau = newNiveau;
                 hero.Experience = newExperience;

@@ -27,7 +27,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.CompteJoueurs.Where(c => c.Id == id).First();
+                var result = context.CompteJoueurs.Find(id);
 
                 context.CompteJoueurs.Remove(result);
 
