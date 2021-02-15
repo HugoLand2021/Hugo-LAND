@@ -12,9 +12,8 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Find(idMonde);
-
-                var nouvelleClasse = new Classe()
+                Monde monde = context.Mondes.Find(idMonde);
+                context.Classes.Add(new Classe()
                 {
                     NomClasse = nom,
                     Description = description,
@@ -23,9 +22,7 @@ namespace Hugo_LAND.Core.Model
                     StatBaseInt = ints,
                     StatBaseVitalite = vit,
                     Monde = monde
-                };
-                context.Classes.Add(nouvelleClasse);
-
+                });
                 context.SaveChanges();
             }
         }
@@ -34,21 +31,17 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Classes.Find(id);
-
-                context.Classes.Remove(result);
-
+                context.Classes.Remove(context.Classes.Find(id));
                 context.SaveChanges();
             }
         }
 
-        public static void ModifClasse(int id,string nom, string description, int str, int dex, int ints, int vit, int idMonde)
+        public static void ModifClasse(int id, string nom, string description, int str, int dex, int ints, int vit, int idMonde)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Classes.Find(id);
-                var monde = context.Mondes.Find(idMonde);
-
+                Classe result = context.Classes.Find(id);
+                Monde monde = context.Mondes.Find(idMonde);
                 result.NomClasse = nom;
                 result.Description = description;
                 result.StatBaseStr = str;
@@ -56,7 +49,6 @@ namespace Hugo_LAND.Core.Model
                 result.StatBaseInt = ints;
                 result.StatBaseVitalite = vit;
                 result.Monde = monde;
-
                 context.SaveChanges();
             }
         }
@@ -65,17 +57,14 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Find(idMonde).Classes;
-                return result;
+                return context.Mondes.Find(idMonde).Classes;
             }
         }
         public static Classe RetourneClasseHero(int idHero)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Heros.Find(idHero).Classe;
-
-                return result;
+                return context.Heros.Find(idHero).Classe;
             }
         }
 

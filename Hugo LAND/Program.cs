@@ -44,7 +44,7 @@ namespace Hugo_LAND
 
             /* Range de test pour les CompteJoueurs
              
-            CompteJoueursCRUD.CreerJoueur("Random-Pal", "Arnaudzetaime@gaymail.com", "Arnaud", "Labrecque", 4, "SucksTObeU");
+            Console.WriteLine(CompteJoueursCRUD.CreerJoueur("Random-Pal", "Arnaudzetaime@gaymail.com", "Arnaud", "Labrecque", 4, "SucksTObeU"));
             CompteJoueursCRUD.SupprimerJoueur(2);
             CompteJoueursCRUD.ModifCompteJoueur(3, "JetManger", "AntonynyneCoolDextraze@gmail.com", "Anthony", "Dextrazio", 1, "GirlHunterzz64");
             CompteJoueursCRUD.ValideJoueur("Random-Pal", "SucksTObeU");

@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 namespace Hugo_LAND.Core.Model
 {
-    public static class CompteJoueursCRUD //
+    public static class CompteJoueursCRUD
     {
-        public static void CreerJoueur(string nomJoueur, string courriel, string prenom, string nom, int typeUtilisateur, string mdp)
+        public static string CreerJoueur(string nomJoueur, string courriel, string prenom, string nom, int typeUtilisateur, string mdp)
         {
             ObjectParameter message = new ObjectParameter("message", typeof(string));
-
             using (HugoLANDContext context = new HugoLANDContext())
             {
                 context.CreerCompteJoueur(nomJoueur, courriel, prenom, nom, typeUtilisateur, mdp, message);
-
-                Console.WriteLine(message.Value);
                 context.SaveChanges();
-
+                return (string)message.Value;
             }
         }
 
@@ -27,12 +24,8 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.CompteJoueurs.Find(id);
-
-                context.CompteJoueurs.Remove(result);
-
+                context.CompteJoueurs.Remove(context.CompteJoueurs.Find(id));
                 context.SaveChanges();
-
             }
         }
 
@@ -51,27 +44,13 @@ namespace Hugo_LAND.Core.Model
             }
         }
 
-        public static bool ValideJoueur(string nom, string mdp)
+        public static string ValideJoueur(string nom, string mdp)
         {
             ObjectParameter message = new ObjectParameter("message", typeof(string));
-
             using (HugoLANDContext context = new HugoLANDContext())
             {
-
-                    int connect = 0;
-                    connect = context.Connexion(nom, mdp, message);
-
-                    if (connect == 1)
-                    {
-                        Console.WriteLine(message.Value);
-                        return true;
-                    }
-                    else
-                    {
-                        Console.WriteLine(message.Value);
-                        return false;
-                    }
-
+                context.Connexion(nom, mdp, message);
+                return (string)message.Value;
             }
         }
     }
