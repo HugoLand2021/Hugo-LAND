@@ -67,11 +67,5 @@ namespace Hugo_LAND.Core.Model
                 return context.Heros.Find(idHero).Classe;
             }
         }
-
-
-
-
-
-
     }
 }

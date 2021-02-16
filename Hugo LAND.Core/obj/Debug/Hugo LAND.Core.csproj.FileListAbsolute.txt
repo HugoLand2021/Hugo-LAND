@@ -17,7 +17,6 @@ D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Co
 D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\bin\Debug\EntityFramework.SqlServer.dll
 D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\bin\Debug\EntityFramework.xml
 D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\bin\Debug\EntityFramework.SqlServer.xml
-D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.csprojAssemblyReference.cache
 D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.csproj.CoreCompileInputs.cache
 D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.csproj.CopyComplete
 D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND.Core\obj\Debug\Hugo LAND.Core.dll
