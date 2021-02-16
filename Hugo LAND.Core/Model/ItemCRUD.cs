@@ -8,9 +8,7 @@ namespace Hugo_LAND.Core.Model
 {
     public static class ItemCRUD
     {
-
-
-        public static void CreerItem(string nom, string description, int x, int y, Nullable<int> imageId, int mondeId)
+        public static void CreerItem(string nom, string description, Nullable<int> x, Nullable<int> y, Nullable<int> imageId, int mondeId)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
@@ -31,7 +29,6 @@ namespace Hugo_LAND.Core.Model
 
         public static void SupprimerItem(int idItem, int idHero)
         {
-
             using (HugoLANDContext context = new HugoLANDContext())
             {
                 Hero hero = context.Heros.Find(idHero);
@@ -39,16 +36,12 @@ namespace Hugo_LAND.Core.Model
                 item.x = null;
                 item.y = null;
                 item.Hero = hero;
-                hero.InventaireHeroes.Add(new InventaireHero()
-                {
-                    Hero = hero,
-                    Item = item
-                });
+                hero.Items.Add(item);
                 context.SaveChanges();
             }
         }
 
-        public static void ModifierItem(int idItem,int idHero, int quantite)
+        public static void ModifierQuantiteItem(int idItem, int idHero, int quantite) //On s'excuse 
         {
             if (quantite < 0)
                 throw new Exception("ErreurQuantitéNégative");
@@ -57,26 +50,27 @@ namespace Hugo_LAND.Core.Model
             {
                 Hero hero = context.Heros.Find(idHero);
                 Item item = context.Items.Find(idItem);
-                int nombreItems = hero.InventaireHeroes.Where(i => i.Item.Id == idItem).Count();
-
-                if (nombreItems > quantite) //En retirer
+                int nombreItems = hero.Items.Where(it => it.Nom == item.Nom && it.Hero.Id == idHero && it.Monde.Id == item.Monde.Id).Count();
+                int nombreDiff = Math.Abs(quantite - nombreItems);
+                if (nombreDiff > 0)
                 {
-                    for (int i = 0; i < Math.Abs(quantite - nombreItems); i++)
+                    if (nombreItems < quantite) //En ajouter
                     {
-                        hero.InventaireHeroes.Add(new InventaireHero()
+                        for (int i = 0; i < nombreDiff; i++)
                         {
-                            Item = item,
-                            Hero = hero
-                        });
+                            CreerItem(item.Nom, item.Description, item.x, item.y, item.ImageId, item.Monde.Id);
+                            SupprimerItem(context.Items.ToList().LastOrDefault(it => it.Nom == item.Nom).Id,idHero);
+                        }
                     }
-                }
-                else if (nombreItems < quantite)  // En ajouter
-                {
-                    for (int i = 0; i < Math.Abs(quantite - nombreItems); i++)
+                    else if (nombreItems > quantite)  // En retirer
                     {
-                        hero.InventaireHeroes.Remove()
+                        for (int i = 0; i < nombreDiff; i++)
+                        {
+                            Item itemRemove = context.Items.ToList().LastOrDefault(it => it.Nom == item.Nom && it.Hero.Id == idHero && it.Monde.Id == item.Monde.Id);
+                            hero.Items.Remove(itemRemove);
+                            context.Items.Remove(context.Items.Find(itemRemove.Id));
+                        }
                     }
-
                 }
                 context.SaveChanges();
             }

@@ -14,13 +14,12 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var nouveauMonde = new Monde()
+                context.Mondes.Add(new Monde()
                 {
                     Description = description,
                     LimiteX = limX,
                     LimiteY = limY
-                };
-                context.Mondes.Add(nouveauMonde);
+                });
                 context.SaveChanges();
             }
         }
@@ -28,11 +27,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Find(id);
-
-                context.Mondes.Remove(result);
-
-
+                context.Mondes.Remove(context.Mondes.Find(id));
                 context.SaveChanges();
             }
         }
@@ -40,22 +35,17 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Find(id);
-
+                Monde result = context.Mondes.Find(id);
                 result.LimiteX = limX;
                 result.LimiteY = limY;
-
                 context.SaveChanges();
             }
-
         }
-
         public static void ModifDescription(int id, string description)
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var result = context.Mondes.Find(id);
-
+                Monde result = context.Mondes.Find(id);
                 result.Description = description;
                 context.SaveChanges();
             }

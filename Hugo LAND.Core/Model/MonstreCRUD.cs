@@ -12,8 +12,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Find(idMonde);
-
+                Monde monde = context.Mondes.Find(idMonde);
                 context.Monstres.Add(new Monstre()
                 {
                     Nom = nom,
@@ -41,9 +40,8 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monstre = context.Monstres.Find(ID);
-                var monde = context.Mondes.Find(idMonde);
-
+                Monstre monstre = context.Monstres.Find(ID);
+                Monde monde = context.Mondes.Find(idMonde);
                 monstre.ImageId = ImageId;
                 monstre.Monde = monde;
                 monstre.Niveau = niveau;

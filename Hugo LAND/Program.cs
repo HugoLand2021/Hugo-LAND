@@ -40,8 +40,8 @@ namespace Hugo_LAND
 
             */
 
-             //Range de test pour les CompteJoueurs
-             
+            //Range de test pour les CompteJoueurs
+
             //Console.WriteLine(CompteJoueursCRUD.CreerJoueur("Keke", "keke@mail.com", "KE", "KEeheh", 2, "Watatow"));
             //CompteJoueursCRUD.SupprimerJoueur(2);
             //CompteJoueursCRUD.ModifCompteJoueur(3, "JetManger", "AntonynyneCoolDextraze@gmail.com", "Anthony", "Dextrazio", 1, "GirlHunterzz64");
@@ -52,11 +52,13 @@ namespace Hugo_LAND
 
 
 
-            /* Range de test pour les Items
-             
-            ItemCRUD.CreerItem("Potion de Vigueur", "Augmente le debit d'eau", 23, 10, null, 3);
+            // Range de test pour les Items
 
-            */
+            //ItemCRUD.CreerItem("Potion de vie", "Récupère la vie", 10, 14, null, 3);
+            //ItemCRUD.SupprimerItem(3,1);
+            ItemCRUD.ModifierQuantiteItem(3, 1, 3);
+
+            
 
             /* Range de test pour les ItemsEffets
              
@@ -95,6 +97,9 @@ namespace Hugo_LAND
             */
 
             // EffetItemCRUD.SupprimeEffetItem(1);
+
+
+
         }
     }
 }
