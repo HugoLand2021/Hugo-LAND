@@ -14,8 +14,7 @@ namespace Hugo_LAND.Core.Model
         {
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                var monde = context.Mondes.Find(mondeId);// On passe un ID, On recherche le hero basé sur l'Id, on pogne le hero et c'est lui qu'on passe
-
+                Monde monde = context.Mondes.Find(mondeId);
                 context.Items.Add(new Item()
                 {
                     Nom = nom,
@@ -26,19 +25,17 @@ namespace Hugo_LAND.Core.Model
                     Hero = null,
                     Monde = monde
                 });
-
-
                 context.SaveChanges();
             }
         }
 
-        public static void SupprimerItem(int id, int idHero)
+        public static void SupprimerItem(int idItem, int idHero)
         {
 
             using (HugoLANDContext context = new HugoLANDContext())
             {
                 Hero hero = context.Heros.Find(idHero);
-                Item item = context.Items.Find(id);
+                Item item = context.Items.Find(idItem);
                 item.x = null;
                 item.y = null;
                 item.Hero = hero;
@@ -47,17 +44,40 @@ namespace Hugo_LAND.Core.Model
                     Hero = hero,
                     Item = item
                 });
-                hero.Items.Add(item);
                 context.SaveChanges();
             }
         }
 
-        public static void ModifierItem(int idHero)
+        public static void ModifierItem(int idItem,int idHero, int quantite)
         {
+            if (quantite < 0)
+                throw new Exception("ErreurQuantitéNégative");
+
             using (HugoLANDContext context = new HugoLANDContext())
             {
-                //Hero hero = context.Heros.Where(h => h.Id == id).FirstOrDefault();
-                //Item item = context.Items.Where(m => m.Id == id).FirstOrDefault();
+                Hero hero = context.Heros.Find(idHero);
+                Item item = context.Items.Find(idItem);
+                int nombreItems = hero.InventaireHeroes.Where(i => i.Item.Id == idItem).Count();
+
+                if (nombreItems > quantite) //En retirer
+                {
+                    for (int i = 0; i < Math.Abs(quantite - nombreItems); i++)
+                    {
+                        hero.InventaireHeroes.Add(new InventaireHero()
+                        {
+                            Item = item,
+                            Hero = hero
+                        });
+                    }
+                }
+                else if (nombreItems < quantite)  // En ajouter
+                {
+                    for (int i = 0; i < Math.Abs(quantite - nombreItems); i++)
+                    {
+                        hero.InventaireHeroes.Remove()
+                    }
+
+                }
                 context.SaveChanges();
             }
         }

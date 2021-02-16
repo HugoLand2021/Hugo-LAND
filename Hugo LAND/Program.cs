@@ -1,7 +1,5 @@
-﻿using Hugo_LAND.Core;
-using Hugo_LAND.Core.Model;
+﻿using Hugo_LAND.Core.Model;
 using System;
-using System.Data.Entity.Core.Objects;
 
 namespace Hugo_LAND
 {
@@ -42,14 +40,17 @@ namespace Hugo_LAND
 
             */
 
-            /* Range de test pour les CompteJoueurs
+             //Range de test pour les CompteJoueurs
              
-            Console.WriteLine(CompteJoueursCRUD.CreerJoueur("Random-Pal", "Arnaudzetaime@gaymail.com", "Arnaud", "Labrecque", 4, "SucksTObeU"));
-            CompteJoueursCRUD.SupprimerJoueur(2);
-            CompteJoueursCRUD.ModifCompteJoueur(3, "JetManger", "AntonynyneCoolDextraze@gmail.com", "Anthony", "Dextrazio", 1, "GirlHunterzz64");
-            CompteJoueursCRUD.ValideJoueur("Random-Pal", "SucksTObeU");
+            //Console.WriteLine(CompteJoueursCRUD.CreerJoueur("Keke", "keke@mail.com", "KE", "KEeheh", 2, "Watatow"));
+            //CompteJoueursCRUD.SupprimerJoueur(2);
+            //CompteJoueursCRUD.ModifCompteJoueur(3, "JetManger", "AntonynyneCoolDextraze@gmail.com", "Anthony", "Dextrazio", 1, "GirlHunterzz64");
+            //Console.WriteLine(CompteJoueursCRUD.ValideJoueur("Random-Pal", "SucksTObeU"));
 
-            */
+            //Mauvais mdp
+            //Console.WriteLine(CompteJoueursCRUD.ValideJoueur("Random-Pal", "AHAHAHAHAA"));
+
+
 
             /* Range de test pour les Items
              
@@ -93,7 +94,7 @@ namespace Hugo_LAND
             };
             */
 
-            EffetItemCRUD.SupprimeEffetItem(1);
+            // EffetItemCRUD.SupprimeEffetItem(1);
         }
     }
 }

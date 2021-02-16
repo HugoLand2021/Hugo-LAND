@@ -10,45 +10,35 @@ namespace Hugo_LAND.Core.Model
     {
         public static void CreeEffetItem(int newValeurEffet, int newTypeEffet, int idItem)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
-                var item = context.Items.Find(idItem);
-
-                var newEffetItem = new EffetItem
+                Item item = context.Items.Find(idItem);
+                context.EffetItems.Add(new EffetItem
                 {
                     ValeurEffet = newValeurEffet,
                     TypeEffet = newTypeEffet,
                     Item = item
-
-                };
-                context.EffetItems.Add(newEffetItem);
+                });
                 context.SaveChanges();
             }
         }
-
 
         public static void SupprimeEffetItem(int id)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
-                var effetItems = context.EffetItems.Find(id);
-
-                context.EffetItems.Remove(effetItems);
+                context.EffetItems.Remove(context.EffetItems.Find(id));
                 context.SaveChanges();
             }
-
         }
-
 
         public static void ModifEffetItem(int id, int changedValeurEffet, int changedTypeEffet)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
-                var effetItems = context.EffetItems.Find(id);
-
+                EffetItem effetItems = context.EffetItems.Find(id);
                 effetItems.ValeurEffet = changedValeurEffet;
                 effetItems.TypeEffet = changedTypeEffet;
-
                 context.SaveChanges();
             }
 

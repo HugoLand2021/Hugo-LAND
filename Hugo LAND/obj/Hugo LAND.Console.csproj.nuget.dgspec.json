@@ -1,33 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {}
+    "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj": {
+    "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj",
+        "projectUniqueName": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj",
         "projectName": "Hugo LAND.Core",
-        "projectPath": "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj"
+        "projectPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {
+    "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
+        "projectUniqueName": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
         "projectName": "Hugo LAND.Console",
-        "projectPath": "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
-        "packagesPath": "C:\\Users\\ant33\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND\\obj\\",
+        "projectPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\Hugo LAND.Console.csproj",
+        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
+        "outputPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ant33\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,8 +41,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj": {
-                "projectPath": "C:\\Users\\ant33\\Desktop\\TOUT\\École\\Session 7-8\\DÉVELOPPEMENT AVEC LES BASES DE DONNÉES\\TP1\\Hugo-LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj"
+              "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj": {
+                "projectPath": "D:\\School\\Quatrième session\\Base de données\\TP01\\Projet\\Hugo LAND\\Hugo LAND.Core\\Hugo LAND.Core.csproj"
               }
             }
           }

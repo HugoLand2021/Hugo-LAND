@@ -36,3 +36,41 @@ C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runt
 C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\arnau\Documents\GitHub\Hugo-LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.dll.config
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.exe
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.dll.config
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.deps.json
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.runtimeconfig.json
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.runtimeconfig.dev.json
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Console.pdb
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\EntityFramework.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Core.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Core.pdb
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\bin\Debug\netcoreapp3.1\Hugo LAND.Core.dll.config
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.csprojAssemblyReference.cache
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.AssemblyInfoInputs.cache
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.AssemblyInfo.cs
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.csproj.CoreCompileInputs.cache
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.csproj.CopyComplete
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.dll
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.pdb
+D:\School\Quatrième session\Base de données\TP01\Projet\Hugo LAND\Hugo LAND\obj\Debug\netcoreapp3.1\Hugo LAND.Console.genruntimeconfig.cache

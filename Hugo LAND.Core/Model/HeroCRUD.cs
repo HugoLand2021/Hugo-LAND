@@ -12,13 +12,12 @@ namespace Hugo_LAND.Core.Model
             int newStatInt, int newStatVitalite, string newNomHero, bool newConnection, int idClasse, int idCompteJoueur,
               int idMonde)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
                 Monde monde = context.Mondes.Find(idMonde);
                 Classe classe = context.Classes.Find(idClasse);
                 CompteJoueur compteJoueur = context.CompteJoueurs.Find(idCompteJoueur);
-
-                Hero newHero = new Hero
+                context.Heros.Add(new Hero
                 {
                     Niveau = newNiveau,
                     Experience = newExperience,
@@ -33,15 +32,14 @@ namespace Hugo_LAND.Core.Model
                     Classe = classe,
                     CompteJoueur = compteJoueur,
                     Monde = monde
-                };
-                context.Heros.Add(newHero);
+                });
                 context.SaveChanges();
             }
         }
 
         public static void SupprimeHero(int id)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
                 context.Heros.Remove(context.Heros.Find(id));
                 context.SaveChanges();
@@ -51,7 +49,7 @@ namespace Hugo_LAND.Core.Model
         public static void ModifHero(int id, int newNiveau, long newExperience, int newStatStr, int newStatDex,
             int newStatInt, int newStatVitalite, string newNomHero)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
                 Hero hero = context.Heros.Find(id);
                 hero.Niveau = newNiveau;
@@ -72,7 +70,7 @@ namespace Hugo_LAND.Core.Model
                 throw new Exception("DimensionRayonPasBonne");
             }
 
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
                 return context.Mondes.Find(mondeId)
                     .ObjetMondes.Where(obj => Math.Abs(obj.x - heroX) < rayon &&
@@ -91,7 +89,7 @@ namespace Hugo_LAND.Core.Model
 
         public static void DeplaceHero(int idHero, int newX, int newY)
         {
-            using (var context = new HugoLANDContext())
+            using (HugoLANDContext context = new HugoLANDContext())
             {
                 Hero hero = context.Heros.Find(idHero);
                 hero.x = newX;
